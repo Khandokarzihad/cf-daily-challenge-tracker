@@ -37,3 +37,11 @@ Create a Google Sheet with two tabs:
    - **Auto-Fill New Handle:** `onSheetEdit` → `From spreadsheet` → `On edit`.
    - **Midnight Settlement:** `runDailyCodeforcesCheck` → `Time-driven` → `Day timer` → `Midnight to 1am`.
 4. Click **Deploy → New deployment → Web app** (`Execute as: Me`, `Who has access: Anyone`) to generate the live Leaderboard Web App URL.
+
+### 3. Discord Midnight Penalty Webhook Setup
+1. In your Discord server, create a dedicated text channel (e.g., `#cf-daily-tracker`).
+2. Click the **Gear icon (Edit Channel)** → **Integrations** → **Webhooks** → **New Webhook**.
+3. Name the webhook (e.g., `CF Penalty Judge`) and click **Copy Webhook URL**.
+4. In your Google Apps Script (`Code.gs`), replace `"YOUR_DISCORD_WEBHOOK_URL"` with your copied URL:
+   ```javascript
+   const WEBHOOK_URL = "[https://discord.com/api/webhooks/](https://discord.com/api/webhooks/)...";
